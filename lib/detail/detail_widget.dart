@@ -2,14 +2,14 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RegisterWidget extends StatefulWidget {
-  RegisterWidget({Key key}) : super(key: key);
+class DetailWidget extends StatefulWidget {
+  DetailWidget({Key key}) : super(key: key);
 
   @override
-  _RegisterWidgetState createState() => _RegisterWidgetState();
+  _DetailWidgetState createState() => _DetailWidgetState();
 }
 
-class _RegisterWidgetState extends State<RegisterWidget> {
+class _DetailWidgetState extends State<DetailWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

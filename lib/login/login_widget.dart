@@ -192,7 +192,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            NavBarPage(initialPage: 'HomePage'),
+                                            NavBarPage(initialPage: 'Home'),
                                       ),
                                       (r) => false,
                                     );
@@ -201,7 +201,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   options: FFButtonOptions(
                                     width: 300,
                                     height: 50,
-                                    color: Color(0xFF0F2A58),
+                                    color: FlutterFlowTheme.primaryColor,
                                     textStyle: GoogleFonts.getFont(
                                       'Open Sans',
                                       color: Color(0xFFDEDEDE),
@@ -215,29 +215,35 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   ),
                                 ),
                               ),
-                              InkWell(
-                                onTap: () async {
-                                  if (emailTextController.text.isEmpty) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'Email required!',
-                                        ),
-                                      ),
-                                    );
-                                    return;
-                                  }
-                                  await resetPassword(
-                                    email: emailTextController.text,
-                                    context: context,
-                                  );
-                                },
-                                child: Text(
-                                  'Forgot password?',
-                                  style: GoogleFonts.getFont(
-                                    'Open Sans',
-                                    fontSize: 14,
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                                child: FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'Sign up',
+                                  options: FFButtonOptions(
+                                    width: 300,
+                                    height: 50,
+                                    color: FlutterFlowTheme.primaryColor,
+                                    textStyle: GoogleFonts.getFont(
+                                      'Open Sans',
+                                      color: Color(0xFFDEDEDE),
+                                      fontSize: 16,
+                                    ),
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 0,
+                                    ),
+                                    borderRadius: 25,
                                   ),
+                                ),
+                              ),
+                              Text(
+                                'Forgot password?',
+                                style: GoogleFonts.getFont(
+                                  'Open Sans',
+                                  fontSize: 14,
                                 ),
                               )
                             ],
@@ -275,7 +281,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                       builder: (context) =>
                                                           NavBarPage(
                                                               initialPage:
-                                                                  'HomePage'),
+                                                                  'Home'),
                                                     ),
                                                     (r) => false,
                                                   );
@@ -324,52 +330,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     )
                                   ],
                                 ),
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
-                                    child: Text(
-                                      'Don\'t have an account?',
-                                      style: GoogleFonts.getFont(
-                                        'Open Sans',
-                                        color: Color(0xFFADADAD),
-                                        fontSize: 14,
-                                      ),
-                                    ),
-                                  ),
-                                  InkWell(
-                                    onTap: () async {
-                                      final user = await createAccountWithEmail(
-                                        context,
-                                        emailTextController.text,
-                                        passwordTextController.text,
-                                      );
-                                      if (user == null) {
-                                        return;
-                                      }
-
-                                      await Navigator.pushAndRemoveUntil(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => NavBarPage(
-                                              initialPage: 'HomePage'),
-                                        ),
-                                        (r) => false,
-                                      );
-                                    },
-                                    child: Text(
-                                      'Sign Up',
-                                      style: GoogleFonts.getFont(
-                                        'Open Sans',
-                                        fontSize: 14,
-                                      ),
-                                    ),
-                                  )
-                                ],
                               )
                             ],
                           )

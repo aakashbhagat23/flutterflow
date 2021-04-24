@@ -1,6 +1,5 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProfileWidget extends StatefulWidget {
@@ -19,10 +18,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
       key: scaffoldKey,
       body: SafeArea(
         child: Align(
-          alignment: Alignment(0, -0.35),
-          child: FaIcon(
-            FontAwesomeIcons.user,
-            color: FlutterFlowTheme.secondaryColor,
+          alignment: Alignment(0, 0),
+          child: Icon(
+            Icons.logout,
+            color: FlutterFlowTheme.primaryColor,
             size: 100,
           ),
         ),

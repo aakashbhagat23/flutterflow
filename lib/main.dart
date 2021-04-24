@@ -4,9 +4,9 @@ import 'auth/firebase_user_provider.dart';
 import 'package:test/login/login_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
-import 'home_page/home_page_widget.dart';
-import 'search/search_widget.dart';
+import 'home/home_widget.dart';
 import 'profile/profile_widget.dart';
+import 'search/search_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,7 +60,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPage = 'HomePage';
+  String _currentPage = 'Home';
 
   @override
   void initState() {
@@ -71,9 +71,9 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'HomePage': HomePageWidget(),
-      'Search': SearchWidget(),
+      'Home': HomeWidget(),
       'Profile': ProfileWidget(),
+      'Search': SearchWidget(),
     };
     return Scaffold(
       body: tabs[_currentPage],
@@ -92,13 +92,6 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: FaIcon(
-              FontAwesomeIcons.search,
-              size: 24,
-            ),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: FaIcon(
               FontAwesomeIcons.user,
               size: 24,
             ),
@@ -107,6 +100,13 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24,
             ),
             label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.search,
+              size: 24,
+            ),
+            label: 'Search',
           )
         ],
         backgroundColor: Colors.white,
