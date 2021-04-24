@@ -16,6 +16,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      body: Align(
+        alignment: Alignment(0, -0.35),
+        child: Icon(
+          Icons.home,
+          color: FlutterFlowTheme.secondaryColor,
+          size: 100,
+        ),
+      ),
     );
   }
 }
