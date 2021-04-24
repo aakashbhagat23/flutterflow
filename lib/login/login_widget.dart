@@ -354,18 +354,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ],
                               )
                             ],
-                          ),
-                          Align(
-                            alignment: Alignment(0, -0.65),
-                            child: Padding(
-                              padding: EdgeInsets.fromLTRB(0, 4, 0, 0),
-                              child: Image.asset(
-                                'assets/images/desi-food-hunt-logo.png',
-                                width: 200,
-                                height: 100,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
                           )
                         ],
                       ),
