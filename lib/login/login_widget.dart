@@ -215,11 +215,29 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   ),
                                 ),
                               ),
-                              Text(
-                                'Forgot password?',
-                                style: GoogleFonts.getFont(
-                                  'Open Sans',
-                                  fontSize: 14,
+                              InkWell(
+                                onTap: () async {
+                                  if (emailTextController.text.isEmpty) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Email required!',
+                                        ),
+                                      ),
+                                    );
+                                    return;
+                                  }
+                                  await resetPassword(
+                                    email: emailTextController.text,
+                                    context: context,
+                                  );
+                                },
+                                child: Text(
+                                  'Forgot password?',
+                                  style: GoogleFonts.getFont(
+                                    'Open Sans',
+                                    fontSize: 14,
+                                  ),
                                 ),
                               )
                             ],
